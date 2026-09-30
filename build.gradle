@@ -1,0 +1,36 @@
+plugins {
+    id 'fabric-loom' version '1.7-SNAPSHOT'
+}
+
+version = '1.0.0+1.21.x'
+group = 'com.opticores.lib'
+
+base {
+    archivesName = 'opticoreslib'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.1"
+    mappings "net.fabricmc:yarn:1.21.1+build.3:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.16.0"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.116.17+1.21.1"
+
+    // Library specific: typically doesn't depend on fabric-api unless explicitly needed
+}
+
+processResources {
+    def versionValue = version
+    inputs.property "version", versionValue
+    filesMatching("fabric.mod.json") {
+        expand "version": versionValue
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = "UTF-8"
+    it.options.release = 21
+}

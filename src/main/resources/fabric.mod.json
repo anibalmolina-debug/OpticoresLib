@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "opticoreslib",
+  "version": "${version}",
+  "name": "OptiCoreLib",
+  "description": "Simple library mod for Opticores",
+  "authors": [
+    "Colorfulsunshine & Lilbroskato"
+  ],
+  "contact": {
+    "sources": "https://github.com/anibalmolina-debug/OpticoresLib"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {},
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": ">=0.116.17+1.21.1",
+    "minecraft": ">=1.21.1 <=1.21.11",
+    "java": "21"
+  }
+}
